@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+body{
+    background: #66347F;
+    margin: 0;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.account-register{
+    background: #f2f1f6;
+    padding: 30px 35px;
+    border-radius: 20px;
+    box-shadow: 0px 10px 40px #00000051;
+    width: 30%;
+}
+
+.account-register h2{
+   text-align: center;
+   color: #66347F;
+   font-weight: 800;
+   margin: 0;
+}
+
+label{
+    color: #402e5a;
+}
+
+form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.field{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.field input{
+    width: 100%;
+    border: none;
+    padding: 15px;
+    border-radius: 15px;
+    font-size: 14px;
+    box-shadow: 0px 10px 40px #00000051;
+    outline: none;
+}
+
+.input-submit{
+    width: 100%;
+    padding: 16px 0;
+    margin: 25px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    font-weight: 800;
+    background-color: #66347F;
+    color: #f2f1f6;
+    cursor: pointer;
+    box-shadow: 0px 10px 40px #00000051;
+}
