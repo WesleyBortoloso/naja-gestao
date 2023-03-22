@@ -1,0 +1,96 @@
+<%= stylesheet_link_tag 'municipes/show', media: 'all', 'data-turbolinks-track': 'reload' %>
+<title>Naja - Visualizar Municípe</title>
+
+<p style="color: green" class="notice"><%= notice %></p>
+
+<main>
+  <div class="grid">
+    <h1>Municípe</h1>
+    <div class="first-grid">
+      <div class="field">
+        <h2>Nome Completo</h2>
+        <p><%=@municipe.name%></p>
+      </div>
+
+      <div class="field">
+        <h2>CPF</h2>
+        <p><%=@municipe.cpf%></p>
+      </div>
+
+      <div class="field">
+        <h2>Código nacional de saúde</h2>
+        <p><%=@municipe.cns%></p>
+      </div>
+
+      <div class="field">
+        <h2>Email</h2>
+        <p><%=@municipe.email%></p>
+      </div>
+    </div>
+    <div class="second-grid">
+      <div class="field">
+        <h2>Data de nascimento</h2>
+        <p><%=@municipe.birthdate%></p>
+      </div>
+
+      <div class="field">
+        <h2>Telefone</h2>
+        <p><%=@municipe.phone%></p>
+      </div>
+
+      <div class="field">
+        <h2>Foto</h2>
+        <%= link_to 'Visualizar foto do municípe', @municipe.photo %>
+      </div>
+
+      <div class="field">
+        <h2>Status</h2>
+        <p><%=@municipe.status%></p>
+      </div>
+    </div>
+    <h1> Endereço(s) </h1>
+    <%@municipe.addresses.each do |address| %>
+      <div class="first-grid">
+        <div class="field">
+          <h2>CEP</h2>
+          <p><%=address.zip_code%></p>
+        </div>
+
+        <div class="field">
+          <h2>Rua</h2>
+          <p><%=address.street%></p>
+        </div>
+
+        <div class="field">
+          <h2>Bairro</h2>
+          <p><%=address.neighborhood%></p>
+        </div>
+
+        <div class="field">
+          <h2>Cidade</h2>
+          <p><%=address.city%></p>
+        </div>
+      </div>
+      <div class="second-grid">
+        <div class="field">
+          <h2>Estado</h2>
+          <p><%=address.state%></p>
+        </div>
+
+        <div class="field">
+          <h2>Código IBGE</h2>
+          <p><%=address.ibge_code%></p>
+        </div>
+
+        <div class="field">
+          <h2>Complemento</h2>
+          <p><%=address.complement%></p>
+        </div>
+      </div>
+    <%end%>
+    <div class="links">
+      <%= link_to "Editar Municipe", edit_municipe_path(@municipe) %> |
+      <%= link_to "Voltar para página principal", municipes_path %>
+    </div>
+  </div>
+</main>

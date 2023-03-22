@@ -1,0 +1,52 @@
+<%= stylesheet_link_tag 'municipes/new', media: 'all', 'data-turbolinks-track': 'reload' %>
+<title>Naja - Editar Municípe</title>
+
+<main>
+ <div class="create-form">
+  <h1>Editar Municípe</h1>
+
+  <%= form_with(url: municipe_path, method: :patch, model: @municipe) do |form| %>
+  <div class="first-grid">
+    <div class="field">
+      <%= form.label :name, "Nome completo" %>
+      <%= form.text_field :name, required: true %>
+    </div>
+
+    <div class="field">
+      <%= form.label :cpf, "CPF" %>
+      <%= form.text_field :cpf, required: true %>
+    </div>
+
+    <div class="field">
+      <%= form.label :cns, "Código nacional de saúde" %>
+      <%= form.text_field :cns, required: true %>
+    </div>
+
+    <div class="field">
+      <%= form.label :email, "Email" %>
+      <%= form.text_field :email, required: true %>
+    </div>
+  </div>
+  <div class="second-grid">
+    <div class="field">
+      <%= form.label :birthdate, "Data de aniversário" %>
+      <%= form.date_field :birthdate, required: true %>
+    </div>
+
+    <div class="field">
+      <%= form.label :phone, "Telefone" %>
+      <%= form.text_field :phone, required: true %>
+    </div>
+
+    <div class="field">
+      <%= form.label :status %>
+      <%= form.select :status, options_for_select(Municipe.statuses.map {|key, value| [key.humanize, value]}), {}, required: true %>
+    </div>
+  </div>
+  <div class="footer">
+    <%= form.submit "Continuar" %>
+    <%= link_to "Voltar para o dashboard", municipes_path %>
+  </div>
+  <% end %>
+  </div>
+</main>

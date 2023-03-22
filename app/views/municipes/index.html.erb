@@ -1,0 +1,105 @@
+<%= stylesheet_link_tag 'municipes/index', media: 'all', 'data-turbolinks-track': 'reload' %>
+<title>Naja - Dashboard</title>
+
+<p style="color: green" class="notice"><%= notice %></p>
+
+<div class="side-menu">
+ <div class="brand">
+  <h1>Naja</h1>
+    <%= image_tag 'cobraroxa.svg' %>
+ </div>
+ <div class="logout">
+ <%= link_to destroy_user_session_path, data: { turbo_method: :delete, turbo_confirm: 'Tem certeza que deseja deslogar?' }, class: 'logout-btn' do %>
+    <%= image_tag 'logoutt.png' %>
+  <%end%>
+ </div>
+</div>
+<div class="container">
+  <div class= "header">
+    <div class= "nav">
+      <div class= "filter">
+        <%= form_with url: municipes_path, method: :get, class:  'filter-form' do |form| %>
+          <%= form.label :filtro, "Filtro" %>
+          <%= form.select :filtro, options_for_select(Municipe.options_for_filter), {}, include_blank: true %>
+
+          <%= form.label :valor_filtro, "Conteúdo" %>
+          <%= form.text_field :valor_filtro %>
+          <%= form.submit 'Filtrar' %>
+        <% end %>
+      </div>
+      <div class= "filter">
+        <%= form_with url: municipes_path, method: :get, class:  'filter-form' do |form| %>
+          <%= form.label :filtro_endereco, "Filtro Endereço" %>
+          <%= form.select :filtro_endereco, options_for_select(Address.options_for_filter), {}, include_blank: true %>
+
+          <%= form.label :valor_filtro_endereco, "Conteúdo Endereço" %>
+          <%= form.text_field :valor_filtro_endereco %>
+          <%= form.submit 'Filtrar' %>
+        <% end %>
+      </div>
+    </div>  
+  </div>
+  <div class="content">
+    <div class="cards">
+      <div class="card">
+        <div class="box">
+          <h1> <%= Municipe.all.count %> </h1>
+          <h3> Municípes </h3>
+        </div>
+      </div>
+      <div class="card">
+        <div class="box">
+          <h1> <%= Address.distinct.count(:city) %> </h1>
+          <h3> Municípios </h3>
+        </div>
+      </div>
+      <div class="card">
+        <div class="box">
+          <h1> <%= Municipe.where(status: 'inativo').count %> </h1>
+          <h3> Municípes Inativos </h3>
+        </div>
+      </div>
+      <div class="card">
+        <div class="box">
+          <h1> <%= Municipe.where(status: 'ativo').count %> </h1>
+          <h3> Municípes Ativos </h3>
+        </div>
+      </div>
+    </div>
+    <div class="content-2">
+      <div class="municipes">
+        <div class="title">
+          <h2>Municípes</h2>
+          <%= link_to 'Adicionar', new_municipe_path %>
+        </div>
+        <table>
+          <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>CPF</th>
+            <th>CNS</th>
+            <th>Email</th>
+            <th>Telefone</th>
+            <th>Data de Nascimento</th>
+            <th>Status</th>
+            <th>Detalhes</th>
+          </tr>
+          <% @municipes.each do |municipe| %>
+            <tr>
+              <td> <%= municipe.id %> </td>
+              <td> <%= municipe.name %> </td>
+              <td> <%= municipe.cpf %> </td>
+              <td> <%= municipe.cns %> </td>
+              <td> <%= municipe.email %> </td>
+              <td> <%= municipe.phone %> </td>
+              <td> <%= municipe.birthdate %> </td>
+              <td> <%= municipe.status %> </td>
+              <td> <%= link_to 'Detalhes', municipe_path(municipe.id) %> </td>
+            </tr>
+          <% end %>
+        </table>
+        <%= will_paginate @produtos %>
+      </div>
+    </div>
+  </div>
+</div>  
