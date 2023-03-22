@@ -1,0 +1,58 @@
+<%= stylesheet_link_tag 'municipes/new', media: 'all', 'data-turbolinks-track': 'reload' %>
+<title>Naja - Vincular Endereço</title>
+
+<main>
+  <ul id="progressbar">
+    <li class="active">Cadastrar Municípe</li>
+    <li class="active">Vincular Endereço</li>
+  </ul>
+ <div class="create-form">
+  <h1>Vincular endereço a <%= @address&.municipe&.name %> </h1>
+
+  <%= form_with(model: @address, url: addresses_path(municipe_id: @address&.municipe&.id)) do |form| %>
+
+  <div class="first-grid">
+    <div class="field">
+      <%= form.label :zip_code, "CEP" %>
+      <%= form.text_field :zip_code, required: true, maxlength: 8 %>
+    </div>
+
+    <div class="field">
+      <%= form.label :street, "Rua" %>
+      <%= form.text_field :street, required: true %>
+    </div>
+
+    <div class="field">
+      <%= form.label :neighborhood, "Bairro" %>
+      <%= form.text_field :neighborhood, required: true %>
+    </div>
+
+    <div class="field">
+      <%= form.label :city, "Cidade" %>
+      <%= form.text_field :city, required: true %>
+    </div>
+  </div>
+  <div class="second-grid">
+    <div class="field">
+      <%= form.label :state, "UF" %>
+      <%= form.text_field :state, required: true %>
+    </div>
+
+    <div class="field">
+      <%= form.label :ibge_code, "Código IBGE" %>
+      <%= form.text_field :ibge_code %>
+    </div>
+
+    <div class="field">
+      <%= form.label :complement, "Complemento" %>
+      <%= form.text_field :complement %>
+    </div>
+  </div>
+  <div class="footer">
+    <%= form.submit "Cadastrar" %>
+  </div>
+  <% end %>
+  </div>
+</main>
+
+<%= javascript_include_tag 'complete_address' %>
