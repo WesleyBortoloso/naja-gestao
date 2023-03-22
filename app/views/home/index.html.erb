@@ -1,0 +1,29 @@
+<%= stylesheet_link_tag 'home/index', media: 'all', 'data-turbolinks-track': 'reload' %>
+<title>Naja - Gestão de Municípes</title>
+
+<body data-page="home-page">
+    <main>
+        <aside>
+            <h1>Naja <br> Gerenciamento de Municípes</h1>
+            <%= image_tag 'Building-amico.svg' %>
+            <p>A gestão de municípes nunca foi tão simples e eficiente!</p>
+        </aside>
+        <section class="login-form">
+          <div class="login-card">
+            <h1> Acesse a plataforma! </h1>
+            <%= form_for(User.new, url: user_session_path) do |f| %>
+              <div class="text-field">
+                <%= f.label :email, "Email" %>
+                <%= f.email_field :email, placeholder: "Email", required: true %>
+              </div>
+              <div class="text-field">
+                <%= f.label :password, "Senha" %>
+                <%= f.password_field :password, placeholder: "Senha", required: true %>
+              </div>
+              <%= f.submit "Entrar", class: 'login-button' %>
+              <%= link_to 'Criar uma conta', new_user_registration_path %>
+            <% end %>
+          </div>
+        </section>
+    </main>
+<body>
