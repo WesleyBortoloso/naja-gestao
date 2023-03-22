@@ -14,7 +14,7 @@ and run the rails server with:
 
 To-do list
 
-- [ ] Deploy da aplicação par ficar disponível em produção
+- [ ] Deploy da aplicação para ficar disponível em produção
 
 - [ ] Alteração de endereço
 
