@@ -1,0 +1,22 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  zip_code: '12356000'
+  street: Rua
+  complement: Complemento
+  neighborhood: neighborhood
+  zip_code: Cep
+  city: Cidade
+  state: Estado
+  ibge_code: codigo
+  municipe: one
+
+two:
+  zip_code: MyString
+  street: MyString
+  complement: MyString
+  zip_code: MyString
+  city: MyString
+  state: MyString
+  ibge_code: MyString
+  municipe: two

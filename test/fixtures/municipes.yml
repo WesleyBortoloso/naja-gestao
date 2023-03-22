@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: Testante Um
+  cpf: 12345678919
+  cns: '987654321123456'
+  email: testanteum@gmail.com
+  birthdate: 2023-03-21
+  phone: '49984180101'
+  photo: NoPhoto
+  status: ativo
+
+two:
+  name: Testante Dois
+  cpf: '12345678918'
+  cns: '987654321123454'
+  email: testantedois@gmail.com
+  birthdate: 2023-03-21
+  phone: '49984180101'
+  photo: NoPhoto
+  status: Inativo
