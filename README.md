@@ -1,3 +1,24 @@
+To run the project, clone the repository in your computer
+
+Access the repository and type this commands: 
+
+`bundle install`
+
+`rails db:create`
+
+`rails db:migrate`
+
+and run the rails server with:
+
+`rails s`
+
+To-do list
+
+- [ ] Deploy da aplicação par ficar disponível em produção
+
+- [ ] Alteração de endereço
+
+- [ ] Melhoria e limpeza de código
 
 ### Backend
 
