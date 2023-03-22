@@ -36,12 +36,12 @@
 
 4. Processo de criação de testes.
 
- - [ ] Realizar a criação de testes que envolvem as regras de negócios.
+ - [x] Realizar a criação de testes que envolvem as regras de negócios.
 
 5. Processo de deploy
 
 - [ ] Subir o gerenciamento para produção, tornando o acesso público.
-- [ ] Código completo versionado no GitHub.
+- [x] Código completo versionado no GitHub.
 
 
 ### Frontend
